@@ -9,7 +9,9 @@ import { useProduct, useRelated } from "../react-query/product";
 
 const Product = ({ match: { params } }) => {
   const { product } = useProduct(params.slug);
-  const { relatedProduct } = useRelated(product?._id);
+  console.log("product:", product);
+  const { relatedProduct } = useRelated(product?.slug, product?._id);
+  console.log("relatedProduct:", relatedProduct);
   const [rating, setRating] = useState();
   const { user } = useSelector((state) => ({ ...state }));
 

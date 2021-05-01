@@ -10,7 +10,9 @@ import { Provider } from "react-redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import rootReducer from "./reducers";
 import { QueryClientProvider, QueryClient } from "react-query";
-const queryClient = new QueryClient();
+import { ReactQueryDevtools } from "react-query/devtools";
+
+export const queryClient = new QueryClient();
 
 const store = createStore(rootReducer, composeWithDevTools());
 ReactDOM.render(
@@ -21,6 +23,7 @@ ReactDOM.render(
         <App />
       </BrowserRouter>
     </Provider>
+    <ReactQueryDevtools initialIsOpen={false} />
   </QueryClientProvider>,
 
   // </React.StrictMode>
