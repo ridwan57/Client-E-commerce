@@ -1,4 +1,3 @@
-import { Query } from "mongoose";
 import { useQuery, QueryCache } from "react-query";
 import { queryClient } from "..";
 import { getCategories, getCategory } from "../functions/category";
